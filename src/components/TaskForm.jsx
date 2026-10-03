@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 
-function TaskForm() {
-  // 1. State:
+function TaskForm({ onAddTask }) {
   const [taskName, setTaskName] = useState("");
   const [priority, setPriority] = useState("Medium");
 
-  // 2. Event Handler: form submission handler
   const handleSubmit = (e) => {
-    e.preventDefault(); // prevent default refresh behavior of the form
-    if (!taskName) return; // if it is empty, do nothing
+    e.preventDefault();
+    if (!taskName.trim()) return;
 
-    console.log("Task submitted:", { taskName, priority });
+    const newTask = {
+      id: Date.now(),
+      name: taskName,
+      priority: priority,
+    };
 
-    // Empty the form after submission
+    onAddTask(newTask);
     setTaskName("");
     setPriority("Medium");
   };
@@ -20,44 +22,38 @@ function TaskForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      style={{
-        margin: "20px 0",
-        padding: "15px",
-        border: "1px solid #ccc",
-        borderRadius: "8px",
-      }}
+      className="bg-slate-900 border border-slate-800 p-6 rounded-xl shadow-xl mb-6"
     >
-      <h3>Create New Support Task</h3>
+      <h3 className="text-md font-semibold text-slate-100 mb-4">
+        Create New Support Task
+      </h3>
 
-      {/* Task Name Input */}
-      <div style={{ marginBottom: "10px" }}>
+      <div className="flex flex-col md:flex-row gap-3">
         <input
           type="text"
-          placeholder="Enter Task Description (e.g., Fix login issue)"
+          placeholder="Enter task description (e.g., Fix login issue)"
           value={taskName}
           onChange={(e) => setTaskName(e.target.value)}
-          style={{ width: "80%", padding: "8px" }}
+          className="flex-1 bg-slate-950 border border-slate-800 text-slate-100 text-sm rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all placeholder:text-slate-500"
         />
-      </div>
 
-      {/* Priority Dropdown */}
-      <div style={{ marginBottom: "10px" }}>
-        <label>Priority: </label>
         <select
           value={priority}
           onChange={(e) => setPriority(e.target.value)}
-          style={{ padding: "8px" }}
+          className="bg-slate-950 border border-slate-800 text-slate-200 text-sm rounded-lg px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-sky-500 cursor-pointer"
         >
-          <option value="Low">Low</option>
-          <option value="Medium">Medium</option>
-          <option value="High">High</option>
+          <option value="High">High Priority</option>
+          <option value="Medium">Medium Priority</option>
+          <option value="Low">Low Priority</option>
         </select>
-      </div>
 
-      {/* Add Task Button */}
-      <button type="submit" style={{ padding: "8px 16px", cursor: "pointer" }}>
-        Add Task
-      </button>
+        <button
+          type="submit"
+          className="bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold text-sm rounded-lg px-5 py-2.5 transition-all active:scale-95 cursor-pointer shadow-lg shadow-sky-500/20"
+        >
+          Add Task
+        </button>
+      </div>
     </form>
   );
 }
