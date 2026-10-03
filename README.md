@@ -1,16 +1,35 @@
-# React + Vite
+# 🚀 Smart Support Task & Demand Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern, responsive task and support demand management web application built with **React** and **Tailwind CSS**. This application helps teams and support personnel efficiently track, filter, and manage daily support demands and tasks with priority-based workflows.
 
-Currently, two official plugins are available:
+👉 **Live Demo:** [smart-support-tracker.netlify.app](https://smart-support-tracker.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Task & Demand CRUD Operations:** Easily add, track, and manage support tasks.
+- **Priority-Based Filtering:** Filter tasks instantly by priority level (_High_, _Medium_, _Low_).
+- **Bulk Action ("Clear All"):** Quickly clear completed or obsolete task lists with confirmation safety.
+- **Dynamic Status Tracking:** Real-time summary counts for pending and completed tasks.
+- **Responsive UI:** Fully mobile-friendly interface designed with custom Tailwind CSS styling.
 
-## Expanding the Oxlint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## 🛠️ Tech Stack
+
+- **Frontend:** React (Vite)
+- **Styling:** Tailwind CSS
+- **Deployment:** Netlify
+- **Version Control:** Git & GitHub
+
+---
+
+## 🚀 Getting Started Locally
+
+To run this project locally on your machine:
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/meazaasrachew-arch/smart-support-tracker.git](https://github.com/meazaasrachew-arch/smart-support-tracker.git)
+   ```
